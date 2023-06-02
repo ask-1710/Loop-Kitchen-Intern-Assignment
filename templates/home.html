@@ -20,12 +20,15 @@
 </head>
 <body>
     <h1 class="font-weight-bold text-center">Loop Store Monitoring System</h1>
-    <form action="{{url_for('generate_report')}}">
-        <button type="submit" class="btn btn-primary">Generate Report</button><br/>
+    <h3 style="display: inline;" class="font-weight-bol m-4 p-2">Latest Activity :<small class="m-4 p-2 text-muted">{{report_message}}</small></h3>
+    <form action="{{url_for('request_trigger_report')}}">
+        <button type="submit" class="m-4 btn btn-primary">Generate New Report</button><br/>
     </form>
-    <form action="{{url_for('check_report_status')}}">
-        Latest Report ID requested for/generated: <p>{{reportID}}</p><br/>
+    <form class="m-4 p-2" action="{{url_for('check_report_status')}}" method="POST">
+        Enter the report ID: 
+        <input class="m-2 p-2" type="text" name="reportID" id="reportID">
         <button type="submit" class="btn btn-info" onclick="check_report_status()">Check Report Status</button>
     </form>
+    <p class="m-4 p-2 font-weight-bold">{{check_message}}</p>
 </body>
 </html>
