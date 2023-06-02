@@ -257,6 +257,12 @@ INSERT INTO LK_STORE_STATUS VALUES(
 );
 
 
+INSERT INTO LK_STORE_STATUS VALUES(
+    8.37746568845657E+018,
+    '2023-06-02 13:45:39.388884 UTC',
+    'active'
+);
+
 ------------------------------------------------- --
 
 INSERT INTO LK_MENU_HOURS VALUES(
