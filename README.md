@@ -1,12 +1,12 @@
 # Loop-Kitchen-Intern-Assignment
 
-Aspiring SDE intern at Loop Kitchen, excited to tackle this home interview problem, demonstrating my skills and passion for coding and problem-solving.
+The solution devised is a backend API built using Flask python-framework and SQLlite3 DB. Jinja template was used for creating dynamic HTML pages. SQL was used for the creation and insertion of values into the table.
 
+A modular, typings-based system was chosen and implemented using classes, modules and type hints. 
 
-**Problem Statement:**
+A trigger+polling architecture was developed with the help of threads. Multithreading was implemented for micro tasks, independent of other parallel tasks. Synchronization with locks was deployed for performing database operations and writes to global variables to avoid race conditions. The application allows multiple parallel requests for report generations as well.
 
-Loop monitors several restaurants in the US and needs to monitor if the store is online or not. All restaurants are supposed to be online during their business hours. Due to some unknown reasons, a store might go inactive for a few hours. Restaurant owners want to get a report of the how often this happened in the past.   
+To account for the lack of continuos, consistent information a ratio-based interpolation strategy was deployed to compute results from the data available in the DB. 
 
-**Python Framework used:** Flask
+The cumulative report is converted into a dataframe and send as a csv file to the client browser for download.
 
-**DB:** SQlite3 
