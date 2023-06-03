@@ -5,13 +5,6 @@ from typing import Dict, List
 import pytz
 import pandas as pd
 
-## GLOBAL VARIABLES ##
-sql_ops = SQLiteOperations("loopkitchen.db")
-result: Dict[str, StoreReport] = {}
-result_status: Dict[str, bool] = {}
-result_lock = Lock()
-sql_lock = Lock()
-######################
 
 class StoreReport:
     def __init__(self, store_id):
@@ -113,6 +106,15 @@ class SQLiteOperations:
             return res
         
 
+## GLOBAL VARIABLES ##
+sql_ops = SQLiteOperations("loopkitchen.db")
+result: Dict[str, StoreReport] = {}
+result_status: Dict[str, bool] = {}
+result_lock = Lock()
+sql_lock = Lock()
+######################
+
+#### HELPER FUNCTIONS #####
 def find_store_timings_utc(store_id, timezone_str, curr_date):
     global sql_ops, sql_lock
     week_day = TimingFunctions.get_day_of_week(curr_date)
@@ -247,9 +249,10 @@ def trigger_report_store_wise(report_id, store_id):
     result_lock.acquire(blocking=True)
     result[report_id].append(row)
     result_lock.release()
-    # RELEASE LOCK
 
+############################
 
+#### PUBLIC FUNCTIONS #####
 def trigger_report(report_id: str)->None:
     global result, result_status, sql_ops
     store_ids = sql_ops.fetch_all_stores()
@@ -291,6 +294,11 @@ def deserialize_report(report_id: int) -> pd.DataFrame :
     df = pd.DataFrame(data)
     return df    
 
+############################
 
+
+### TESTING FUNCTIONS #####
 if __name__ == "__main__":
-    trigger_report(1)
+    # trigger_report(1)
+    print(TimingFunctions.get_time_now())
+###########################
