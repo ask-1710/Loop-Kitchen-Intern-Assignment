@@ -1,12 +1,15 @@
 # Loop-Kitchen-Intern-Assignment
 
-The solution devised is a backend API built using the Python framework, Flask and SQLlite3 DB. Jinja template was used for creating dynamic HTML pages. SQL was used for the creation and insertion of static values into the table.
+Welcome to the Loop-Kitchen-Intern-Assignment repository! This project showcases a backend API developed using the Flask framework in Python, coupled with SQLlite3 for database management. The goal is to provide a comprehensive solution for generating reports and dynamic HTML pages.
 
-A modular, typings-based system was chosen and implemented using classes, modules and type hints. 
+## Features and Implementation
 
-A trigger+polling architecture was developed with the help of threads. Multithreading was implemented for micro tasks, independent of other parallel tasks. Synchronization with locks was deployed for performing database operations and writes to global variables to avoid race conditions. The application allows multiple parallel client requests for report generations as well.
-
-To account for the lack of continuos, consistent information, a ratio-based interpolation strategy was implemented to compute results from the data available in the DB. 
-
-The cumulative report is converted into a dataframe and sent as a csv file to the client browser for download.
-
+- **Backend API:** Built using Flask, the backend API facilitates data management and report generation.
+- **Database Management:** Utilized SQLlite3 to create and manage static data in the database.
+- **Dynamic HTML:** Employed Jinja templates for generating dynamic HTML pages.
+- **Modular System:** Implemented a modular architecture using classes, modules, and type hints for a structured codebase.
+- **Multithreading:** Developed a trigger+polling architecture using threads, enabling parallelism for micro tasks.
+- **Synchronization:** Employed locks for database operations and global variables to prevent race conditions.
+- **Parallel Request Handling:** The application efficiently handles multiple client requests for report generation.
+- **Data Interpolation:** Implemented a ratio-based interpolation strategy to derive results from available data.
+- **Report Delivery:** Converted cumulative reports into dataframes and delivered them as downloadable CSV files.
