@@ -1,6 +1,8 @@
 # Loop-Kitchen-Intern-Assignment
 
-Welcome to the Loop-Kitchen-Intern-Assignment repository! This project showcases a backend API developed using the Flask framework in Python, coupled with SQLlite3 for database management. The goal is to provide a comprehensive solution for generating reports and dynamic HTML pages.
+Welcome to the Loop-Kitchen-Intern-Assignment repository! This project showcases a backend API developed using the Flask framework in Python, coupled with SQLlite3 for database management. 
+
+The application reads data from sqllite3 DB and generates a month-wise, week-wise, day-wise and hour-wise report for all the restaurants. The report generation is asynchronous and a client can request for multiple reports to be generated at once. 
 
 ## Features and Implementation
 
